@@ -15,16 +15,17 @@ class TestCreateNewContact(unittest.TestCase):
         self.open_home_page(wd)
         self.login(wd, login="admin", password="secret")
         self.open_create_new_contact(wd)
-        self.fill_new_contact_data(wd)
+        self.fill_new_contact_data(wd, firstname="test", middlename="mmmiddlename", lastname="test", nickname="test",
+                                   title="twst", company="test", address="test", home="77777777",
+                                   mobile="888888888", work="9999999", fax="555555", email="test", email2="test",
+                                   email3="test", homepage="test", bday="17", bmonth="November", byear="2000")
         self.logout(wd)
 
     def logout(self, wd):
         wd.find_element_by_link_text("Logout").click()
 
-    def fill_new_contact_data(self, wd, firstname="test", middlename="mmmiddlename", lastname="test", nickname="test",
-                              title="twst", company="test", address="test", home="77777777", mobile="888888888",
-                              work="9999999", fax="555555", email="test", email2="test", email3="test", homepage="test",
-                              bday="17", bmonth="November", byear="2000"):
+    def fill_new_contact_data(self, wd, firstname, middlename, lastname, nickname, title, company, address, home,
+                              mobile, work, fax, email, email2, email3, homepage, bday, bmonth, byear):
         wd.find_element_by_name("firstname").click()
         wd.find_element_by_name("firstname").clear()
         wd.find_element_by_name("firstname").send_keys(firstname)
