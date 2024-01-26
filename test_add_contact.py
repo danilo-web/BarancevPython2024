@@ -12,18 +12,19 @@ class TestCreateNewContact(unittest.TestCase):
 
     
     def test_create_new_contact(self):
-        wd = self.wd
-        self.login(wd, login="admin", password="secret")
-        self.create_new_contact(wd, Contact(firstname="test", middlename="mmmiddlename", lastname="test",
+        self.login(login="admin", password="secret")
+        self.create_new_contact(Contact(firstname="test", middlename="mmmiddlename", lastname="test",
                                             nickname="test", title="twst", company="test", address="test", home="77777777",
                                             mobile="888888888", work="9999999", fax="555555", email="test", email2="test",
                                             email3="test", homepage="test", bday="17", bmonth="November", byear="2000"))
-        self.logout(wd)
+        self.logout()
 
-    def logout(self, wd):
+    def logout(self):
+        wd = self.wd
         wd.find_element_by_link_text("Logout").click()
 
-    def create_new_contact(self, wd, contact):
+    def create_new_contact(self, contact):
+        wd = self.wd
         wd.find_element_by_link_text("add new").click()
         wd.find_element_by_name("firstname").click()
         wd.find_element_by_name("firstname").clear()
@@ -67,7 +68,8 @@ class TestCreateNewContact(unittest.TestCase):
         wd.find_element_by_name("byear").send_keys(contact.byear)
         wd.find_element_by_xpath("//div[@id='content']/form/input[20]").click()
 
-    def login(self, wd, login, password):
+    def login(self, login, password):
+        wd = self.wd
         wd.get("http://localhost/addressbook/index.php")
         wd.find_element_by_name("user").click()
         wd.find_element_by_name("user").clear()
