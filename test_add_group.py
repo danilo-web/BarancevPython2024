@@ -41,11 +41,11 @@ class TestAddGroup(unittest.TestCase):
         # fill_group_data
         wd.find_element_by_name("group_name").click()
         wd.find_element_by_name("group_name").clear()
-        wd.find_element_by_name("group_name").send_keys("%s" % group.name)
+        wd.find_element_by_name("group_name").send_keys(group.name)
         wd.find_element_by_name("group_header").clear()
-        wd.find_element_by_name("group_header").send_keys("%s" % group.header)
+        wd.find_element_by_name("group_header").send_keys(group.header)
         wd.find_element_by_name("group_footer").clear()
-        wd.find_element_by_name("group_footer").send_keys("%s" % group.footer)
+        wd.find_element_by_name("group_footer").send_keys(group.footer)
         # submit_group_creation
         wd.find_element_by_name("submit").click()
 
@@ -58,10 +58,10 @@ class TestAddGroup(unittest.TestCase):
     def login(self, wd, Username, Password):
         wd.find_element_by_name("user").click()
         wd.find_element_by_name("user").clear()
-        wd.find_element_by_name("user").send_keys("%s" % Username)
+        wd.find_element_by_name("user").send_keys(Username)
         wd.find_element_by_name("pass").click()
         wd.find_element_by_name("pass").clear()
-        wd.find_element_by_name("pass").send_keys("%s" % Password)
+        wd.find_element_by_name("pass").send_keys(Password)
         wd.find_element_by_xpath("//input[@value='Login']").click()
 
     def is_element_present(self, how, what):
