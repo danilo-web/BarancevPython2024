@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 from selenium import webdriver
-from selenium.common.exceptions import NoSuchElementException
-from selenium.common.exceptions import NoAlertPresentException
 from group import Group
 import unittest
 
@@ -13,19 +11,19 @@ class TestAddGroup(unittest.TestCase):
 
     def test_add_group(self):
         self.login(Username="admin", Password="secret")
-        self.new_groupe_creation(Group(name="test", header="tetete", footer="hjmjhgfd"))
+        self.new_group_creation(Group(name="test", header="tetete", footer="hjmjhgfd"))
         self.logout()
 
     def test_add_empty_group(self):
         self.login(Username="admin", Password="secret")
-        self.new_groupe_creation(Group(name="", header="", footer=""))
+        self.new_group_creation(Group(name="", header="", footer=""))
         self.logout()
 
     def logout(self):
         wd = self.wd
         wd.find_element_by_link_text("Logout").click()
 
-    def new_groupe_creation(self, group):
+    def new_group_creation(self, group):
         wd = self.wd
         #open_group_page
         wd.find_element_by_link_text("groups").click()
@@ -53,16 +51,6 @@ class TestAddGroup(unittest.TestCase):
         wd.find_element_by_name("pass").clear()
         wd.find_element_by_name("pass").send_keys(Password)
         wd.find_element_by_xpath("//input[@value='Login']").click()
-
-    def is_element_present(self, how, what):
-        try: self.wd.find_element(by=how, value=what)
-        except NoSuchElementException as e: return False
-        return True
-    
-    def is_alert_present(self):
-        try: self.wd.switch_to_alert()
-        except NoAlertPresentException as e: return False
-        return True
 
     def tearDown(self):
         self.wd.quit()
