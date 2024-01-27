@@ -2,7 +2,6 @@ from selenium.webdriver.firefox.webdriver import WebDriver
 from selenium.webdriver.support.ui import Select
 
 
-
 class Application:
 
     def __init__(self):
