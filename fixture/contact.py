@@ -1,3 +1,5 @@
+import time
+
 from selenium.webdriver.support.ui import Select
 
 
@@ -50,3 +52,8 @@ class ContactHelper:
         wd.find_element_by_name("byear").clear()
         wd.find_element_by_name("byear").send_keys(contact.byear)
         wd.find_element_by_xpath("//div[@id='content']/form/input[20]").click()
+
+    def delete_first_contact(self):
+        wd = self.app.wd
+        wd.find_element_by_name("selected[]").click()
+        wd.find_element_by_xpath("//input[@value='Delete']").click()
