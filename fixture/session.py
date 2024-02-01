@@ -21,3 +21,21 @@ class SessionHelper:
         wd = self.app.wd
         wd.find_element_by_link_text("Logout").click()
         time.sleep(0.1)  # без этого при запуске всех тестов сразу logout не выполняется и тесты виснут
+
+    def is_logged_in_as(self, username):
+        wd = self.app.wd
+        return wd.find_element_by_xpath("//b[text()='(admin)']").text == "("+username+")"
+
+    def ensure_logout(self):
+        wd = self.app.wd
+        if len(wd.find_elements_by_link_text("Logout")) > 0:
+            self.logout()
+
+    def ensure_login(self, username, password):
+        wd = self.app.wd
+        if len(wd.find_elements_by_link_text("Logout")) > 0:
+            if self.is_logged_in_as(username):
+                return
+            else:
+                self.logout()
+        self.login(username, password)
