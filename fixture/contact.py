@@ -1,5 +1,4 @@
 import time
-# updated for WH7
 
 
 class ContactHelper:
