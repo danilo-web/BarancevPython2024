@@ -3,7 +3,6 @@ from fixture.application import Application
 
 
 fixture = None
-# Homework 8
 
 
 @pytest.fixture  # (scope="session")

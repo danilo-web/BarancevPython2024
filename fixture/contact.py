@@ -59,3 +59,8 @@ class ContactHelper:
         self.change_field_value("email2", contact.email2)
         self.change_field_value("email3", contact.email3)
         time.sleep(1)
+
+    def count(self):
+        wd = self.app.wd
+        self.open_contact_page()
+        return len(wd.find_elements_by_xpath("(//img[@src='icons/pencil.png'])"))
