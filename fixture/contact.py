@@ -1,4 +1,5 @@
 import time
+from model.contact import Contact
 
 
 class ContactHelper:
@@ -65,3 +66,14 @@ class ContactHelper:
         wd = self.app.wd
         self.open_contact_page()
         return len(wd.find_elements_by_xpath("(//img[@src='icons/pencil.png'])"))
+
+    def get_contact_list(self):
+        wd = self.app.wd
+        self.open_contact_page()
+        contacts = []
+        for element in wd.find_elements_by_xpath("//tr[@name='entry']"):
+            element_id = element.find_element_by_xpath(".//td[1]//input").get_attribute("value")
+            lastname = element.find_element_by_xpath(".//td[2]").text
+            firstname = element.find_element_by_xpath(".//td[3]").text
+            contacts.append(Contact(firstname=firstname, lastname=lastname, element_id=element_id))
+        return contacts

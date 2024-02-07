@@ -1,6 +1,5 @@
 import time
 from model.group import Group
-from selenium import webdriver
 
 
 class GroupHelper:
@@ -40,8 +39,8 @@ class GroupHelper:
 
     def open_group_page(self):
         wd = self.app.wd
-        if not len(wd.find_elements_by_name("new")) > 0:  # and wd.current_url.endswith("/group.php"):
-                                                       # эти 2 условия вместе не работают, но по отдельности работают
+        if not len(wd.find_elements_by_name("new")) > 0:  # and wd.current_url.endswith("/group.php"): эти 2 условия
+            # вместе не работают, но по отдельности работают
             wd.find_element_by_link_text("groups").click()
 
     def change_field_value(self, field_name, text):
@@ -69,6 +68,7 @@ class GroupHelper:
         wd = self.app.wd
         self.open_group_page()
         return len(wd.find_elements_by_name("selected[]"))
+
     def get_group_list(self):
         wd = self.app.wd
         self.open_group_page()
@@ -78,4 +78,3 @@ class GroupHelper:
             element_id = element.find_element_by_name("selected[]").get_attribute("value")
             groups.append(Group(name=text, element_id=element_id))
         return groups
-
