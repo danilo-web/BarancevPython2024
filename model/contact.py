@@ -33,4 +33,3 @@ class Contact:
             return int(self.element_id)
         else:
             return maxsize
-

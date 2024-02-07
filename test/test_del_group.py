@@ -12,4 +12,4 @@ def test_delete_first_group(app):
     assert old_groups == new_groups
     assert sorted(old_groups, key=Group.id_or_max) == sorted(new_groups, key=Group.id_or_max)
 
-    print(str(old_groups))
+    print(new_groups)

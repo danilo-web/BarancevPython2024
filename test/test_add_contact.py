@@ -12,11 +12,4 @@ def test_create_new_contact(app):
     old_contacts.append(contact)
     assert sorted(old_contacts, key=Contact.id_or_max) == sorted(new_contacts, key=Contact.id_or_max)
 
-    print(str(old_contacts))
-
-
-# def test_create_new_empty_contact(app):
-#     app.contact.create(Contact(firstname="", middlename="", lastname="",
-#                                nickname="", title="", company="", address="", home="",
-#                                mobile="", work="", fax="", email="", email2="",
-#                                email3=""))
+    print(new_contacts)
