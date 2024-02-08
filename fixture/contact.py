@@ -17,22 +17,33 @@ class ContactHelper:
         self.open_contact_page()
         self.group_cache = None
 
-    def modify_first_contact(self, new_contact_data):
+    def modify_first_contact(self):
+        self.modify_contact_by_index(0)
+
+    def modify_contact_by_index(self, index, new_contact_data):
         wd = self.app.wd
         self.open_contact_page()
-        self.select_first_contact()
+        self.select_contact_by_index(index)
         self.fill_contact_form(new_contact_data)
         wd.find_element_by_name("update").click()
         self.open_contact_page()
         self.group_cache = None
 
     def delete_first_contact(self):
+        self.delete_contact_by_index(0)
+
+    def delete_contact_by_index(self, index):
         wd = self.app.wd
         self.open_contact_page()
-        wd.find_element_by_name("selected[]").click()
+        self.select_contact_by_index(index)
         wd.find_element_by_xpath("//input[@value='Delete']").click()
         self.open_contact_page()
         self.group_cache = None
+
+    def select_contact_by_index(self, index):
+        wd = self.app.wd
+        wd.find_elements_by_name("selected[]")[index].click()
+
 
     def open_contact_page(self):
         wd = self.app.wd
@@ -47,8 +58,11 @@ class ContactHelper:
             wd.find_element_by_name(field_name).send_keys(text)
 
     def select_first_contact(self):
+        self.select_contact_by_index(0)
+
+    def select_contact_by_index(self, index):
         wd = self.app.wd
-        wd.find_element_by_xpath("(//img[@src='icons/pencil.png'])").click()
+        wd.find_elements_by_xpath("(//img[@src='icons/pencil.png'])")[index].click()
 
     def fill_contact_form(self, contact):
         self.change_field_value("firstname", contact.firstname)
