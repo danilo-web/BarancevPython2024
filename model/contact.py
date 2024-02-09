@@ -12,10 +12,10 @@ class Contact:
         self.title = title
         self.company = company
         self.address = address
-        self.home = homephone
-        self.mobile = mobilephone
-        self.work = workphone
-        self.fax = fax_phone
+        self.homephone = homephone
+        self.mobilephone = mobilephone
+        self.workphone = workphone
+        self.fax_phone = fax_phone
         self.email = email
         self.email2 = email2
         self.email3 = email3
