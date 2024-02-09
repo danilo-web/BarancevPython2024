@@ -23,8 +23,11 @@ class SessionHelper:
         # time.sleep(0.1)  # без этого при запуске всех тестов сразу logout не выполняется и тесты виснут
 
     def is_logged_in_as(self, username):
+        return self.get_logged_user() == username
+
+    def get_logged_user(self):
         wd = self.app.wd
-        return wd.find_element_by_xpath("//b[text()='(admin)']").text == "("+username+")"
+        return wd.find_element_by_xpath("//b[text()='(admin)']").text[1:-1]
 
     def ensure_logout(self):
         wd = self.app.wd
