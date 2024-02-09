@@ -67,6 +67,7 @@ class ContactHelper:
         self.change_field_value("title", contact.title)
         self.change_field_value("company", contact.company)
         self.change_field_value("address", contact.address)
+        self.change_field_value("home", contact.home)
         self.change_field_value("mobile", contact.mobile)
         self.change_field_value("work", contact.work)
         self.change_field_value("fax", contact.fax)
