@@ -17,5 +17,3 @@ def test_modify_contact_firstname(app):
             old_contacts[i] = contact
             break
     assert sorted(old_contacts, key=Contact.id_or_max) == sorted(new_contacts, key=Contact.id_or_max)
-
-    print(new_contacts)
