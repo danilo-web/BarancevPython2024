@@ -1,4 +1,5 @@
 import re
+from random import randrange
 from model.contact import Contact
 
 
@@ -6,26 +7,23 @@ def test_contact_data_on_home_page(app):
     app.contact.open_contact_page()  # По какой-то причине не запуске всех тестов
                                      # не происходит возврат на хом пейдж и тест падает
     if app.contact.count() == 0:
-        app.contact.create(Contact(firstname="test", lastname="test"))
-    contact_from_homepage = app.contact.get_contact_list()[0]
-    contact_from_edit_page = app.contact.get_contact_info_from_edit_page(0)
-    print('\n' + "1 - contact_from_homepage.all_phones_from_homepage - " + str(contact_from_homepage.all_phones_from_homepage))
-    print("2 - contact_from_edit_page - " + str(merge_phones_like_on_homepage(contact_from_edit_page)))
-    print("3 - contact_from_homepage.all_emails_from_homepage - " + str(contact_from_homepage.all_emails_from_homepage))
-    print("4- merge_emails_like_on_homepage(contact_from_edit_page) - " + str(merge_emails_like_on_homepage(contact_from_edit_page)))
+        app.contact.create(Contact(firstname="NAME", lastname="LASTNAME", address="address", homephone="1111111",
+                                   mobilephone="222", workphone="333", email="E1", email2="E2", email3="E3"))
+    index = randrange(len(app.contact.get_contact_list()))
+    contact_from_homepage = app.contact.get_contact_list()[index]
+    contact_from_edit_page = app.contact.get_contact_info_from_edit_page(index)
 
+    print('\n' "id = " + str(index))
+    print("from_homepage:  " + '\n' + str(contact_from_homepage.all_phones_from_homepage) + '\n' +
+                                      str(contact_from_homepage.all_emails_from_homepage))
+    print("from_edit_page: " + '\n' + str(merge_phones_like_on_homepage(contact_from_edit_page) + '\n' +
+                                      str(merge_emails_like_on_homepage(contact_from_edit_page))))
+
+    assert contact_from_homepage.firstname == contact_from_edit_page.firstname
+    assert contact_from_homepage.lastname == contact_from_edit_page.lastname
+    assert contact_from_homepage.address == contact_from_edit_page.address
     assert contact_from_homepage.all_phones_from_homepage == merge_phones_like_on_homepage(contact_from_edit_page)
     assert contact_from_homepage.all_emails_from_homepage == merge_emails_like_on_homepage(contact_from_edit_page)
-
-
-# def test_phone_on_home_page(app):
-#     # if app.contact.count() == 0:
-#     #     app.contact.create(Contact(firstname="test", lastname="test"))
-#     contact_from_homepage = app.contact.get_contact_list()[0]
-#     contact_from_edit_page = app.contact.get_contact_info_from_edit_page(0)
-#     print("contact_from_homepage.all_phones_from_homepage - " + str(contact_from_homepage.all_phones_from_homepage))
-#     print("contact_from_edit_page - " + str(contact_from_edit_page))
-#     assert contact_from_homepage.all_phones_from_homepage == merge_phones_like_on_homepage(contact_from_edit_page)
 
 
 # def test_phone_on_contact_view_page(app):
