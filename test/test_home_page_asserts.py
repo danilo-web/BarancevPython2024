@@ -4,8 +4,7 @@ from model.contact import Contact
 
 
 def test_contact_data_on_home_page(app):
-    app.contact.open_contact_page()  # По какой-то причине не запуске всех тестов
-                                     # не происходит возврат на хом пейдж и тест падает
+    app.contact.open_contact_page()  # По какой-то причине не запуске всех тестов не происходит возврат на homepage
     if app.contact.count() == 0:
         app.contact.create(Contact(firstname="NAME", lastname="LASTNAME", address="address", homephone="1111111",
                                    mobilephone="222", workphone="333", email="E1", email2="E2", email3="E3"))
@@ -40,8 +39,7 @@ def merge_phones_like_on_homepage(contact):
 
 def merge_emails_like_on_homepage(contact):
     return "\n".join(filter(lambda x: x != "",
-                            filter(lambda x: x is not None,
-                                       [contact.email, contact.email2, contact.email3])))
+                            filter(lambda x: x is not None, [contact.email, contact.email2, contact.email3])))
 
 
 # def test_phone_on_contact_view_page(app):
