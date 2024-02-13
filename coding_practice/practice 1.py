@@ -1,3 +1,5 @@
-def dna_to_rna(dna):
-    if dna == "GCAT":
-        return "GCAU"
+
+
+x = 5
+x = x + 2.5
+print(x)

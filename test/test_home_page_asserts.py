@@ -38,17 +38,10 @@ def merge_phones_like_on_homepage(contact):
                                        [contact.homephone, contact.mobilephone, contact.workphone]))))
 
 
-def clear_emails(s):
-    if s is None:
-        return None
-    return re.sub("[() !?]", "", s)
-
-
 def merge_emails_like_on_homepage(contact):
     return "\n".join(filter(lambda x: x != "",
-                            map(lambda x: clear_emails(x),
-                                filter(lambda x: x is not None,
-                                       [contact.email, contact.email2, contact.email3]))))
+                            filter(lambda x: x is not None,
+                                       [contact.email, contact.email2, contact.email3])))
 
 
 # def test_phone_on_contact_view_page(app):

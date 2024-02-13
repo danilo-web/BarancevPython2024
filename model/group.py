@@ -9,7 +9,7 @@ class Group:
         self.element_id = element_id
 
     def __repr__(self):
-        return "%s:%s" % (self.element_id, self.name)
+        return "%s:%s;%s;%s" % (self.element_id, self.name, self.header, self.footer)
 
     def __eq__(self, other):
         return ((self.element_id is None or other.element_id is None or self.element_id == other.element_id) and

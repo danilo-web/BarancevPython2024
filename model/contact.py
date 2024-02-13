@@ -25,7 +25,7 @@ class Contact:
         self.all_emails_from_homepage = all_emails_from_homepage
 
     def __repr__(self):
-        return "%s:%s:%s" % (self.element_id, self.firstname, self.lastname)
+        return "%s:%s;%s" % (self.element_id, self.firstname, self.lastname)
 
     def __eq__(self, other):
         return ((self.element_id is None or other.element_id is None or self.element_id == other.element_id) and
