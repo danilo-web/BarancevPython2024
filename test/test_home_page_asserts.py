@@ -40,14 +40,3 @@ def merge_phones_like_on_homepage(contact):
 def merge_emails_like_on_homepage(contact):
     return "\n".join(filter(lambda x: x != "",
                             filter(lambda x: x is not None, [contact.email, contact.email2, contact.email3])))
-
-
-# def test_phone_on_contact_view_page(app):
-#     # if app.contact.count() == 0:
-#     #     app.contact.create(Contact(firstname="test", lastname="test"))
-#     contact_from_view_page = app.contact.get_contact_from_view_page(0)  # [0]
-#     contact_from_edit_page = app.contact.get_contact_info_from_edit_page(0)
-#     assert contact_from_view_page.homephone == contact_from_edit_page.homephone
-#     assert contact_from_view_page.mobilephone == contact_from_edit_page.mobilephone
-#     assert contact_from_view_page.workphone == contact_from_edit_page.workphone
-#     assert contact_from_view_page.fax_phone == contact_from_edit_page.fax_phone

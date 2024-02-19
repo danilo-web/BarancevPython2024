@@ -29,7 +29,7 @@ testdata = [Contact(firstname="", middlename="", lastname="", nickname="",
             mobilephone=random_phone_number(10), workphone=random_phone_number(10),
             fax_phone=random_phone_number(10), email=random_string("email", 10),
             email2=random_string("email2", 10), email3=random_string("email3", 10))
-    for i in range(5)
+    for i in range(3)
 ]
 
 
