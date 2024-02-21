@@ -92,3 +92,19 @@ def no_space(x):
 def get_grade(s1, s2, s3):
     return {6:'D', 7:'C', 8:'B', 9:'A', 10:'A'}.get((s1 + s2 + s3) / 30, 'F')
     return 'FFFFFFDCBAA'[sum(s)//30]
+
+def summation(num):
+    a = 0
+    for i in range(num+1):
+        a = a + i
+    return a
+    #
+    # total = 0
+    # for i in range(1, num + 1):
+    #     total += i
+    # return total
+#print(summation(8))
+def descending_order(num):
+    return int((sorted(str(num))))
+
+print(descending_order(213))
