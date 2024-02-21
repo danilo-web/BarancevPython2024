@@ -1,79 +1,82 @@
 [
   {
-    "py/object": "model.group.Group",
-    "name": "",
-    "header": "",
-    "footer": "",
-    "element_id": null
+    "py/object": "model.contact.Contact",
+    "firstname": "",
+    "middlename": "",
+    "lastname": "",
+    "nickname": "",
+    "title": "",
+    "company": "",
+    "address": "",
+    "homephone": "",
+    "mobilephone": "",
+    "workphone": "",
+    "fax_phone": "",
+    "email": "",
+    "email2": "",
+    "email3": "",
+    "element_id": null,
+    "all_phones_from_homepage": null,
+    "all_emails_from_homepage": null
   },
   {
-    "py/object": "model.group.Group",
-    "name": "name; >fL_ ",
-    "header": "header .f  4J\"+yW5Pr",
-    "footer": "footer~3eH\"/51f",
-    "element_id": null
+    "py/object": "model.contact.Contact",
+    "firstname": "Ql",
+    "middlename": "akhpJfI",
+    "lastname": "Zzgv",
+    "nickname": "uYI",
+    "title": "wzm",
+    "company": "companyBzL-0",
+    "address": "addressX",
+    "homephone": " 351+)",
+    "mobilephone": "23757",
+    "workphone": "42---",
+    "fax_phone": "9(5",
+    "email": "emailFhEXEX",
+    "email2": "email2ByOh",
+    "email3": "email36",
+    "element_id": null,
+    "all_phones_from_homepage": null,
+    "all_emails_from_homepage": null
   },
   {
-    "py/object": "model.group.Group",
-    "name": "namek*(wv9>*",
-    "header": "header<ec",
-    "footer": "footerXEK hyMJ}7Os  _  H",
-    "element_id": null
+    "py/object": "model.contact.Contact",
+    "firstname": "-wE",
+    "middlename": "Miybogp",
+    "lastname": "erlqtkdak",
+    "nickname": "PJeEa-",
+    "title": "gpdOuZ",
+    "company": "company",
+    "address": "addressS lj ",
+    "homephone": "",
+    "mobilephone": "5",
+    "workphone": "9",
+    "fax_phone": "0",
+    "email": "emailfN1iwue",
+    "email2": "email2E9f U",
+    "email3": "email3",
+    "element_id": null,
+    "all_phones_from_homepage": null,
+    "all_emails_from_homepage": null
   },
   {
-    "py/object": "model.group.Group",
-    "name": "named*r]",
-    "header": "header[H/W \\D;Xh",
-    "footer": "footer 4 '`oI2d~cT",
-    "element_id": null
-  },
-  {
-    "py/object": "model.group.Group",
-    "name": "name &",
-    "header": "header~JV",
-    "footer": "footer1HghK\\uA7/272",
-    "element_id": null
-  },
-  {
-    "py/object": "model.group.Group",
-    "name": "name\"",
-    "header": "header g7",
-    "footer": "footer A` Eo",
-    "element_id": null
-  },
-  {
-    "py/object": "model.group.Group",
-    "name": "nameTqg9",
-    "header": "header/KUr/y \\(K",
-    "footer": "footerduigr6rb",
-    "element_id": null
-  },
-  {
-    "py/object": "model.group.Group",
-    "name": "namemQC 5e",
-    "header": "headerzj ",
-    "footer": "footer(5kP(N",
-    "element_id": null
-  },
-  {
-    "py/object": "model.group.Group",
-    "name": "name;b",
-    "header": "headerqP25  J =L7",
-    "footer": "footerg}z$^[$= >)su  UK",
-    "element_id": null
-  },
-  {
-    "py/object": "model.group.Group",
-    "name": "nametkxH!",
-    "header": "header)\"4ix",
-    "footer": "footerxv)xcr%2\\|N!/}h$",
-    "element_id": null
-  },
-  {
-    "py/object": "model.group.Group",
-    "name": "name:3u} YFqg",
-    "header": "header?)d",
-    "footer": "footer\"nWPtp(1;d +=]W {[B",
-    "element_id": null
+    "py/object": "model.contact.Contact",
+    "firstname": "rgkgplG",
+    "middlename": "mCxdQ-Ks",
+    "lastname": "",
+    "nickname": "KakcTEJji",
+    "title": "cLn",
+    "company": "companyd",
+    "address": "address",
+    "homephone": "633)",
+    "mobilephone": "39724",
+    "workphone": "3-8+ 009",
+    "fax_phone": "))4)9",
+    "email": "email2l Khi",
+    "email2": "email2c ",
+    "email3": "email3N",
+    "element_id": null,
+    "all_phones_from_homepage": null,
+    "all_emails_from_homepage": null
   }
 ]
