@@ -3,7 +3,7 @@ from model.contact import Contact
 
 
 def test_delete_contact(app):
-    for i in range(3):
+    for i in range(5):
         if app.contact.count() == 0:
             app.contact.create(Contact(firstname="test"))
         old_contacts = app.contact.get_contact_list()

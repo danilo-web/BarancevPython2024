@@ -3,7 +3,7 @@ from model.group import Group
 
 
 def test_delete_random_group(app):
-    for i in range(3):
+    for i in range(10):
         if app.group.count() == 0:
             app.group.create(Group(name="NEW_test"))
         old_groups = app.group.get_group_list()

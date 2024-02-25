@@ -106,5 +106,19 @@ def summation(num):
 #print(summation(8))
 def descending_order(num):
     return int((sorted(str(num))))
-
-print(descending_order(213))
+#########################
+def high_and_low(numbers):
+    return str(max(int(i) for i in numbers.split())) + " " + str(min(int(i) for i in numbers.split()))
+#############################
+def xo(s):
+    x, o = 0, 0
+    for i in s.lower():
+        if i == "x":
+            x += 1
+        elif i == "o":
+            o += 1
+    print(x, o)
+    return x == o
+ ########################
+def maps(a):  # вернуть значение умноженое на 2 для листа
+    return [i * 2 for i in a]
