@@ -1,5 +1,6 @@
 import pymysql.connections
 from model.group import Group
+from model.contact import Contact
 
 
 class Dbfixture:
@@ -19,6 +20,18 @@ class Dbfixture:
             for row in cursor:
                 (element_id, name, header, footer) = row
                 db_group_list.append(Group(element_id=str(element_id), name=name, header=header, footer=footer))
+        finally:
+            cursor.close()
+        return db_group_list
+
+    def get_contact_list(self):
+        db_group_list = []
+        cursor = self.connection.cursor()
+        try:
+            cursor.execute("select id, firstname, lastname from addressbook where deprecated is null ")
+            for row in cursor:
+                (element_id, firstname, lastname) = row
+                db_group_list.append(Contact(element_id=str(element_id), firstname=firstname, lastname=lastname))
         finally:
             cursor.close()
         return db_group_list
